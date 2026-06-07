@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const api = axios.create({
-  baseURL: "http://localhost:5000/api",
+export default axios.create({
+  baseURL:
+    "https://grocery-store-backend-nv11.onrender.com/api",
 });
-
-export default api;
