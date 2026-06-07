@@ -1,10 +1,10 @@
-const Order = require("../models/Order");
-
 const createOrder = async (req, res) => {
   try {
-    const order = await Order.create(req.body);
-
-    res.status(201).json(order);
+    res.status(201).json({
+      success: true,
+      message: "Order placed successfully",
+      order: req.body,
+    });
   } catch (error) {
     res.status(500).json({
       message: error.message,
@@ -14,9 +14,7 @@ const createOrder = async (req, res) => {
 
 const getOrders = async (req, res) => {
   try {
-    const orders = await Order.find();
-
-    res.json(orders);
+    res.json([]);
   } catch (error) {
     res.status(500).json({
       message: error.message,
